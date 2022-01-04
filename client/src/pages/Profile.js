@@ -7,6 +7,8 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME  } from '../utils/queries';
 import FriendList from '../components/FriendList';
 import Auth from '../utils/auth'
+import ThoughtForm from '../components/ThoughtForm';
+
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -70,6 +72,7 @@ const handleClick = async () => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
